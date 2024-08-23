@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  position: absolute;
+  top: 100px;
+  text-align: center;
+  width: 100vw;
+  background: #090979;
+  background: linear-gradient(54deg, #090979 34%, #00d4ff 100%);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-top: 80px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 20px rgb(0, 0, 0, 0.25);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.container .card:hover {
+  height: 420px;
+}
+
+.container .card .imgBox {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid;
+  transition: 0.5s;
+  filter: blur(10px);
+}
+.container .card:hover .imgBox {
+  background-size: 200%;
+  filter: blur(0);
+}
+.container .card .imgBox::before {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  border-radius: 40px;
+}
+
+.container .card .imgBox::after {
+  background-color: transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 75px 70px 0 40px #fff;
+}
+
+.container .card .content {
+  position: relative;
+  top: 220px;
+  z-index: 10;
+  padding: 0 30px;
+  transition: 0.5s;
+}
+.container .card .content h3 {
+  position: relative;
+  font-size: 1.25em;
+  color: #333;
+}
+.container .card .content h3 span {
+  position: absolute;
+  bottom: -17px;
+  font-size: 0.65em;
+  font-weight: 400;
+  opacity: 0.75;
+}
+.container .card .content p {
+  position: relative;
+  color: #333;
+  opacity: 0;
+  transition: 0.5s;
+}
+.container .card:hover .content p {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 940px) {
+  h1 {
+    top: 0;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .container .card {
+    width: 50%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 650px) {
+  h1 {
+    color: #fff;
+  }
+  .container .card {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .container .card {
+    width: 95%;
+  }
+}
